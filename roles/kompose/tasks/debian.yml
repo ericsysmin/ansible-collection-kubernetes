@@ -1,0 +1,7 @@
+---
+- name: kompose | Debian | Install package from github
+  apt: deb={{ kompose_deb_url }}
+  register: task_result
+  until: task_result is success
+  retries: 10
+  delay: 2

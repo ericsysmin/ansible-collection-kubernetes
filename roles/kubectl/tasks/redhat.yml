@@ -1,0 +1,22 @@
+---
+
+- name: kubectl | Redhat | Add the Kubernetes repository
+  yum_repository:
+    name: kubernetes
+    description: Kubernetes
+    baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    enabled: true
+    gpgcheck: true
+    repo_gpgcheck: true
+    gpgkey: >-
+      https://packages.cloud.google.com/yum/doc/yum-key.gpg
+      https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    file: kubernetes
+
+- name: kukectl | Redhat | Install kubectl
+  yum:
+    name: kubectl
+  register: task_result
+  until: task_result is success
+  retries: 10
+  delay: 2

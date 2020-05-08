@@ -1,0 +1,25 @@
+---
+- name: kubectl | Debian | Make sure apt-transport-https is installed
+  apt: name=apt-transport-https update_cache=true
+  register: task_result
+  until: task_result is success
+  retries: 10
+  delay: 2
+
+- name: kubectl | Debian | Add an Apt signing key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: kubectl | Debian | Add the kubectl repository
+  apt_repository:
+    repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: kubernetes
+
+- name: kubectl | Debian | Install the kubectl package
+  apt: name=kubectl update_cache=true
+  register: task_result
+  until: task_result is success
+  retries: 10
+  delay: 2

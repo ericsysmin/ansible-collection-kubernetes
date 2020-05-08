@@ -1,0 +1,4 @@
+---
+# tasks file for kubectl
+
+- include_tasks: "{{ ansible_os_family|lower }}.yml"
