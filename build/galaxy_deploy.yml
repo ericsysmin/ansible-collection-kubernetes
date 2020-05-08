@@ -32,6 +32,6 @@
       when: galaxy_yml.changed
     - name: Publish the collection. # noqa 503
       command: >
-        ansible-galaxy collection publish ./ericsysmin-system-{{ tag }}.tar.gz
+        ansible-galaxy collection publish ./ericsysmin-kubernetes-{{ tag }}.tar.gz
         chdir=../
       when: galaxy_yml.changed
