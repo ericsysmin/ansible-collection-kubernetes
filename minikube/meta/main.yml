@@ -1,0 +1,10 @@
+---
+# code: language=ansible
+
+galaxy_info:
+  author: Eric Anderson
+  description: Role to deploy minikube on a system 
+  license: MIT
+  min_ansible_version: "2.12"
+  galaxy_tags: []
+dependencies: []

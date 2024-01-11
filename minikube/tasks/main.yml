@@ -1,0 +1,6 @@
+---
+# code: language=ansible
+# tasks file for minikube
+
+- name: Minikube | Install for specific OS
+  ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}.yml"

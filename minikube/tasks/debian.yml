@@ -1,0 +1,13 @@
+---
+# code: language=ansible
+
+- name: Minikube | Install latest via Debian package
+  ansible.builtin.apt:
+    deb: https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+  when: minikube_version == latest
+
+- name: Minikube | Install specific version via Debian package
+  ansible.builtin.apt:
+    deb: https://storage.googleapis.com/minikube/releases/download/v{{ minikube_version }}/\
+      minikube_{{ minikube_version }}-0_{{ minikube_architecture_mapping[ansible_architecture] }}.deb
+  when: version != latest
