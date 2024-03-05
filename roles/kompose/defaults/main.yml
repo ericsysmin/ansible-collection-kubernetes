@@ -1,6 +1,4 @@
 ---
 # code: language=ansible
 # defaults file for kompose
-kompose_version: 1.17.0
-kompose_deb_url: https://github.com/kubernetes/kompose/releases/download/v{{ kompose_version }}/kompose_{{ kompose_version }}_amd64.deb
-kompose_rpm_url: https://github.com/kubernetes/kompose/releases/download/v{{ kompose_version }}/kompose-{{ kompose_version }}-1.x86_64.rpm
+kompose_version: 1.32.0
