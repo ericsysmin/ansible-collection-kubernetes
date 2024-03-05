@@ -3,7 +3,8 @@
 # tasks file for kompose
 - name: Kompose | Install binary from github
   ansible.builtin.get_url:
-    url: https://github.com/kubernetes/kompose/releases/\
-      download/v{{ kompose_version }}/kompose-{{ ansible_system }}-{{ ansible_architecture }}
+    url: "https://github.com/kubernetes/kompose/releases\
+      /download/v{{ kompose_version }}/kompose\
+      -{{ ansible_system }}-{{ ansible_architecture }}"
     dest: /usr/local/bin/kompose
     mode: "0755"
