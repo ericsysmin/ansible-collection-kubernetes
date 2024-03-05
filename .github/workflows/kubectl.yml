@@ -21,13 +21,11 @@ jobs:
       fail-fast: true
       matrix:
         molecule_distro:
-          - distro: centos:7
-            command: /usr/sbin/init
-          - {distro: centos-8, command: /usr/sbin/init}
-          - {distro: ubuntu-18.04, command: /lib/systemd/systemd}
-          - {distro: ubuntu-20.04, command: /lib/systemd/systemd}
-          - {distro: ubuntu-22.04, command: /lib/systemd/systemd}
-          - {distro: debian-10, command: /lib/systemd/systemd}
+          - { distro: centos-8, command: /usr/sbin/init }
+          - { distro: ubuntu-18.04, command: /lib/systemd/systemd }
+          - { distro: ubuntu-20.04, command: /lib/systemd/systemd }
+          - { distro: ubuntu-22.04, command: /lib/systemd/systemd }
+          - { distro: debian-10, command: /lib/systemd/systemd }
         collection_role:
           - kubectl
     steps:
