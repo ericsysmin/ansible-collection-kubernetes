@@ -1,24 +1,29 @@
 ---
-- name: kubectl | Debian | Make sure apt-transport-https is installed
-  apt: name=apt-transport-https update_cache=true
+# code: language=ansible
+- name: Kubectl | Debian | Make sure apt-transport-https is installed
+  ansible.builtin.apt:
+    name: apt-transport-https
+    update_cache: true
   register: task_result
   until: task_result is success
   retries: 10
   delay: 2
 
-- name: kubectl | Debian | Add an Apt signing key
-  apt_key:
+- name: Kubectl | Debian | Add an Apt signing key
+  ansible.builtin.apt_key:
     url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
     state: present
 
-- name: kubectl | Debian | Add the kubectl repository
-  apt_repository:
+- name: Kubectl | Debian | Add the kubectl repository
+  ansible.builtin.apt_repository:
     repo: https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /
     state: present
     filename: kubernetes
 
-- name: kubectl | Debian | Install the kubectl package
-  apt: name=kubectl update_cache=true
+- name: Kubectl | Debian | Install the kubectl package
+  ansible.builtin.apt:
+    name: kubectl
+    update_cache: true
   register: task_result
   until: task_result is success
   retries: 10

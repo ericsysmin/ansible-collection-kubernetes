@@ -1,4 +1,5 @@
 ---
+# code: language=ansible
 # tasks file for kompose
-- name: kompose | Install package from github
-  include_tasks: "{{ ansible_os_family|lower }}.yml"
+- name: Kompose | Install package from github
+  ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}.yml"

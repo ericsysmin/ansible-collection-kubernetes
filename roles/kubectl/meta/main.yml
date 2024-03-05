@@ -1,23 +1,12 @@
 ---
+# code: language=ansible
 galaxy_info:
   role_name: kubectl
   author: ericsysmin
   description: Role to install kubectl
   company: Avi Networks
   license: MIT
-  min_ansible_version: 2.4
-  platforms:
-    - name: EL
-      versions:
-        - 7
-    - name: Debian
-      versions:
-        - stretch
-    - name: Ubuntu
-      versions:
-        - trusty
-        - xenial
-        - bionic
+  min_ansible_version: "2.12"
   galaxy_tags:
     - kubectl
     - ubuntu

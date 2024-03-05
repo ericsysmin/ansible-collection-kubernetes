@@ -1,4 +1,6 @@
 ---
+# code: language=ansible
 # tasks file for kubectl
 
-- include_tasks: "{{ ansible_os_family|lower }}.yml"
+- name: Kubectl | Include specific OS Family tasks
+  ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}.yml"

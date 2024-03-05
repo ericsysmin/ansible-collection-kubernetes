@@ -1,16 +1,16 @@
 ---
-name: "ericsysmin.kubernetes.kubectl"
+name: ericsysmin.kubernetes.kubectl
 on:
   push:
     paths:
-      - 'roles/kubectl/**'
-      - 'molecule/kubectl/**'
-      - '.github/workflows/kubectl.yml'
+      - roles/kubectl/**
+      - molecule/kubectl/**
+      - .github/workflows/kubectl.yml
   pull_request:
     paths:
-      - 'roles/kubectl/**'
-      - 'molecule/kubectl/**'
-      - '.github/workflows/kubectl.yml'
+      - roles/kubectl/**
+      - molecule/kubectl/**
+      - .github/workflows/kubectl.yml
 jobs:
   kubectl:
     runs-on: ubuntu-18.04

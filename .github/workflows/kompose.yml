@@ -1,16 +1,16 @@
 ---
-name: "ericsysmin.kubernetes.kompose"
+name: ericsysmin.kubernetes.kompose
 on:
   push:
     paths:
-      - 'roles/kompose/**'
-      - 'molecule/kompose/**'
-      - '.github/workflows/kompose.yml'
+      - roles/kompose/**
+      - molecule/kompose/**
+      - .github/workflows/kompose.yml
   pull_request:
     paths:
-      - 'roles/kompose/**'
-      - 'molecule/kompose/**'
-      - '.github/workflows/kompose.yml'
+      - roles/kompose/**
+      - molecule/kompose/**
+      - .github/workflows/kompose.yml
 jobs:
   kompose:
     runs-on: ubuntu-18.04

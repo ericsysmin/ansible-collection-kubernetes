@@ -1,6 +1,8 @@
 ---
-- name: kompose | Debian | Install package from github
-  apt: deb={{ kompose_deb_url }}
+# code: language=ansible
+- name: Kompose | Debian | Install package from github
+  ansible.builtin.apt:
+    deb: "{{ kompose_deb_url }}"
   register: task_result
   until: task_result is success
   retries: 10

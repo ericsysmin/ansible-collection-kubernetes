@@ -1,7 +1,8 @@
 ---
+# code: language=ansible
 
-- name: kubectl | Redhat | Add the Kubernetes repository
-  yum_repository:
+- name: Kubectl | Redhat | Add the Kubernetes repository
+  ansible.builtin.yum_repository:
     name: kubernetes
     description: Kubernetes
     baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
@@ -13,8 +14,8 @@
       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
     file: kubernetes
 
-- name: kukectl | Redhat | Install kubectl
-  yum:
+- name: Kukectl | Redhat | Install kubectl
+  ansible.builtin.yum:
     name: kubectl
   register: task_result
   until: task_result is success

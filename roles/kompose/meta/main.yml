@@ -1,23 +1,12 @@
 ---
+# code: language=ansible
 galaxy_info:
   author: ericsysmin
   role_name: kompose
   description: Role to install kompose on linux systems
   company: Avi Networks
   license: MIT
-  min_ansible_version: 2.4
-  platforms:
-    - name: EL
-      versions:
-        - 7
-    - name: Ubuntu
-      versions:
-        - trusty
-        - xenial
-        - bionic
-    - name: Debian
-      versions:
-        - stretch
+  min_ansible_version: "2.12"
   galaxy_tags:
     - kompose
     - ubuntu
