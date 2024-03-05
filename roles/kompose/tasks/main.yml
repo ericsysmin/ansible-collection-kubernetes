@@ -1,9 +1,6 @@
 ---
 # code: language=ansible
 # tasks file for kompose
-- name: Kompose | Install package from github
-  ansible.builtin.include_tasks: "{{ ansible_os_family | lower }}.yml"
-
 - name: Kompose | Install binary from github
   ansible.builtin.get_url:
     url: https://github.com/kubernetes/kompose/releases/\
