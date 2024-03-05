@@ -6,8 +6,8 @@ Ansible collection that holds roles, that can be used to configure common kubern
 
 | Role    | Build Status                                                                                                                                                                                                                                                                      | Documentation                                                                                            |
 | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| kubectl | [![ericsysmin.kubernetes.kubectl](https://github.com/ericsysmin/ansible-collection-kubernetes/actions/workflows/kubectl.yml/badge.svg)](https://github.com/ericsysmin/ansible-collection-kubernetes/actions/workflows/kubectl.yml) | [Documentation](https://github.com/ericsysmin/ansible-collection-kubernetes/blob/master/docs/kubectl.md) |
-| kompose | [![ericsysmin.kubernetes.kompose](https://github.com/ericsysmin/ansible-collection-kubernetes/actions/workflows/kompose.yml/badge.svg)](https://github.com/ericsysmin/ansible-collection-kubernetes/actions/workflows/kompose.yml) | [Documentation](https://github.com/ericsysmin/ansible-collection-kubernetes/blob/master/docs/kompose.md) |
+| kubectl | [![ericsysmin.kubernetes.kubectl](https://github.com/ericsysmin/ansible-collection-kubernetes/actions/workflows/kubectl.yml/badge.svg)](https://github.com/ericsysmin/ansible-collection-kubernetes/actions/workflows/kubectl.yml) |  |
+| kompose | [![ericsysmin.kubernetes.kompose](https://github.com/ericsysmin/ansible-collection-kubernetes/actions/workflows/kompose.yml/badge.svg)](https://github.com/ericsysmin/ansible-collection-kubernetes/actions/workflows/kompose.yml) |  |
 
 ## Usage
 
