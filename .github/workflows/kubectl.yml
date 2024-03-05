@@ -13,7 +13,7 @@ on:
       - .github/workflows/kubectl.yml
 jobs:
   kubectl:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     env:
       PY_COLORS: 1
       ANSIBLE_FORCE_COLOR: 1
@@ -23,18 +23,11 @@ jobs:
         molecule_distro:
           - distro: centos:7
             command: /usr/sbin/init
-          - distro: centos:8
-            command: /usr/sbin/init
-          # - fedora:29
-          # - fedora:28
-          - distro: ubuntu:16.04
-            command: /sbin/init
-          - distro: ubuntu:18.04
-            command: /lib/systemd/systemd
-          - distro: ubuntu:20.04
-            command: /lib/systemd/systemd
-          - distro: debian:9
-            command: /lib/systemd/systemd
+          - {distro: centos-8, command: /usr/sbin/init}
+          - {distro: ubuntu-18.04, command: /lib/systemd/systemd}
+          - {distro: ubuntu-20.04, command: /lib/systemd/systemd}
+          - {distro: ubuntu-22.04, command: /lib/systemd/systemd}
+          - {distro: debian-10, command: /lib/systemd/systemd}
         collection_role:
           - kubectl
     steps:
@@ -43,18 +36,20 @@ jobs:
         with:
           path: ansible_collections/ericsysmin/kubernetes
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: 3.12
 
       - name: Install dependencies
         run: |
-          sudo apt install docker
+          sudo apt install apt-transport-https ca-certificates curl software-properties-common
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
           python -m pip install --upgrade pip
-          pip install molecule yamllint ansible-lint docker
+          pip install ansible molecule yamllint ansible-lint molecule-plugins[docker]
 
-      - name: Run role test
+      - name: Run role tests
         run: >-
           molecule --version &&
           ansible --version &&
