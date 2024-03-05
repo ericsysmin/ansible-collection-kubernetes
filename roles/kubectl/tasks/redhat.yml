@@ -5,13 +5,10 @@
   ansible.builtin.yum_repository:
     name: kubernetes
     description: Kubernetes
-    baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    baseurl: https://pkgs.k8s.io/core:/stable:/v{{ kubectl_version }}/rpm/
     enabled: true
     gpgcheck: true
-    repo_gpgcheck: true
-    gpgkey: >-
-      https://packages.cloud.google.com/yum/doc/yum-key.gpg
-      https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    gpgkey: https://pkgs.k8s.io/core:/stable:/v{{ kubectl_version }}/rpm/repodata/repomd.xml.key
     file: kubernetes
 
 - name: Kukectl | Redhat | Install kubectl

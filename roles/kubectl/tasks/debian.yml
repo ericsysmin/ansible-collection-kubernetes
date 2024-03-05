@@ -16,12 +16,12 @@
 
 - name: Kubectl | Debian | Add an Apt signing key
   ansible.builtin.apt_key:
-    url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
+    url: https://pkgs.k8s.io/core:/stable:/v{{ kubectl_version }}/deb/Release.key
     state: present
 
 - name: Kubectl | Debian | Add the kubectl repository
   ansible.builtin.apt_repository:
-    repo: deb https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /
+    repo: deb https://pkgs.k8s.io/core:/stable:/v{{ kubectl_version }}/deb/ /
     state: present
     filename: kubernetes
 
