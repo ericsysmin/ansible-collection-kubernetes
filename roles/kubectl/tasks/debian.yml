@@ -2,7 +2,12 @@
 # code: language=ansible
 - name: Kubectl | Debian | Make sure apt-transport-https is installed
   ansible.builtin.apt:
-    name: apt-transport-https
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - gnupg2
     update_cache: true
   register: task_result
   until: task_result is success
@@ -16,7 +21,7 @@
 
 - name: Kubectl | Debian | Add the kubectl repository
   ansible.builtin.apt_repository:
-    repo: https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /
+    repo: deb https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /
     state: present
     filename: kubernetes
 
