@@ -8,12 +8,12 @@
 
 - name: kubectl | Debian | Add an Apt signing key
   apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
     state: present
 
 - name: kubectl | Debian | Add the kubectl repository
   apt_repository:
-    repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+    repo: https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /
     state: present
     filename: kubernetes
 
